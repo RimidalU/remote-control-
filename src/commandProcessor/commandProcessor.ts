@@ -1,3 +1,4 @@
+import { drawCircle } from './draw/drawCircle.js';
 import { getMousePosition } from '../helpers/getMousePosition.js';
 import pkg from 'robotjs';
 const { getMousePos } = pkg;
@@ -32,6 +33,12 @@ export  const commandProcessor = async (command: string, params: string[], WSStr
 
       case 'mouse_position':
         WSStream.write(`mouse_position ${x},${y} \0`);
+        break;
+
+      case 'draw_circle':
+        const radius = incrementMousePosition[0];
+        drawCircle(x, y, radius);
+        WSStream.write(`draw_circle ${radius} \0`);
         break;
 
 		default:
