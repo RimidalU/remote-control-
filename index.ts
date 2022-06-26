@@ -2,7 +2,7 @@ import Jimp from 'jimp';
 import { httpServer } from './src/http_server/index.js';
 import robot from 'robotjs';
 import { createWebSocketStream, WebSocketServer } from 'ws';
-import { commandProcessor } from 'commandProcessor/commandProcessor.js';
+import { commandProcessor } from './src/commandProcessor/commandProcessor.js';
 
 const HTTP_PORT = 3000;
 const WS_PORT = 8080;
