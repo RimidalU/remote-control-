@@ -1,3 +1,4 @@
+import { printScreen } from './draw/printScreen.js';
 import { drawRectangle } from './draw/drawRectangle.js';
 import { drawCircle } from './draw/drawCircle.js';
 import { getMousePosition } from '../helpers/getMousePosition.js';
@@ -52,6 +53,11 @@ export const commandProcessor = async (command: string, params: string[], WSStre
       const [width, height] = incrementMousePosition;
       drawRectangle(x, y, width, height);
       WSStream.write(`draw_square ${width}\0`);
+      break;
+
+    case 'prnt_scrn':
+      const base64String = await printScreen(x, y);
+      WSStream.write(`prnt_scrn ${base64String} \0`);
       break;
 
     default:
