@@ -1,5 +1,5 @@
 {
-    "name": "ws_task",
+    "name": "remote-control",
     "version": "1.0.0",
     "description": "Template for the WebSocket remote control task",
     "main": "index.js",
@@ -9,15 +9,20 @@
         "start:dev": "nodemon ./index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Andrei Auchynnikau",
+    "author": "Uladzimir Stankevich",
     "keywords": [],
     "license": "ISC",
     "devDependencies": {
-        "nodemon": "^2.0.16"
+        "@typescript-eslint/eslint-plugin": "^5.29.0",
+        "@typescript-eslint/parser": "^5.29.0",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "nodemon": "^2.0.16",
+        "ts-node": "^10.8.1"
     },
     "dependencies": {
         "jimp": "^0.16.1",
         "robotjs": "^0.6.0",
+        "typescript": "^4.7.4",
         "ws": "^8.8.0"
     }
 }
