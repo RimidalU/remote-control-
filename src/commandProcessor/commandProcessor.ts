@@ -16,15 +16,18 @@ export  const commandProcessor = async (command: string, params: string[], WSStr
 			break;
 
 		case 'mouse_down':
-
+      robot.moveMouse(x, y + incrementMousePosition[0]);
+      WSStream.write(`mouse_down ${y + incrementMousePosition[0]} \0`);
 			break;
 
     case 'mouse_left':
-
+     robot.moveMouse(x - incrementMousePosition[0], y);
+      WSStream.write(`mouse_left ${x - incrementMousePosition[0]} \0`);
       break;
 
     case 'mouse_right':
-
+      robot.moveMouse(x + incrementMousePosition[0], y);
+      WSStream.write(`mouse_right ${x + incrementMousePosition[0]} \0`);
       break;
 
 		default:
