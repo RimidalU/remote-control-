@@ -30,6 +30,10 @@ export  const commandProcessor = async (command: string, params: string[], WSStr
       WSStream.write(`mouse_right ${x + incrementMousePosition[0]} \0`);
       break;
 
+      case 'mouse_position':
+        WSStream.write(`mouse_position ${x},${y} \0`);
+        break;
+
 		default:
       console.log('Unknown command:', command);
 			break;
